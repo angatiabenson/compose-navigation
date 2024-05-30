@@ -3,8 +3,10 @@ package ke.co.banit.composenavigation
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -24,6 +26,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import ke.co.banit.composenavigation.ui.theme.LocalSpacing
 
 @Composable
 fun Navigation() {
@@ -62,6 +65,7 @@ fun MainScreen(navController: NavController) {
             onValueChange = { text = it },
             label = { Text("Enter Name") }
         )
+        Spacer(modifier = Modifier.height(LocalSpacing.current.medium))
         Button(
             modifier = Modifier.align(Alignment.End),
             onClick = {
